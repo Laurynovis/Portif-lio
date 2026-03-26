@@ -80,6 +80,7 @@
 
 /* Adicione no final do seu arquivo CSS */
 .btn-voltar {
+  margin-top: 10vh;
   margin-bottom: 50px;
   display: flex;
   align-items: center;

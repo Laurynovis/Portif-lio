@@ -12,24 +12,27 @@
 
 .left-side {
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+  /* MUDANÇA CRUCIAL: display block garante que o conteúdo comece no 0,0 */
+  display: block; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
   
-  justify-content: flex-start; 
-  padding: 80px 40px;
+  /* Esconde a barra como você queria */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   
-  /* --- ROLAGEM SUAVE E ESCONDIDA --- */
-  overflow-y: scroll; /* Mantém o scroll ativo */
-  scroll-behavior: smooth; /* Faz o scroll ser deslizado, não "seco" */
-  
-  /* Esconde no Firefox */
-  scrollbar-width: none; 
-  
-  /* Esconde no IE/Edge antigo */
-  -ms-overflow-style: none; 
-
-  border-right: 1px solid var(--border); 
+  border-right: 1px solid var(--border);
   z-index: 2;
+}
+
+
+.content-container {
+  width: 100%;
+  max-width: 800px; /* Mais espaço para o seu H1 */
+  margin: 0 auto;
+  min-height: 100%; /* Garante que o container acompanhe o crescimento do conteúdo */
 }
 
 /* Esconde no Chrome, Safari e Edge Moderno */
@@ -52,8 +55,3 @@
   overflow: hidden; 
 }
 
-.content-container {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-}
