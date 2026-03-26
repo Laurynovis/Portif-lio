@@ -24,7 +24,7 @@
   width: 100%;
   max-width: 800px;
   margin-left: 2vw;
-  padding-bottom: 150px;
+  padding-bottom: 120px;
 }
 
 .right-side {
@@ -32,18 +32,54 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
-.mobile-carousel {
-  display: none;
+/* ===== DESKTOP PROJECTS ===== */
+
+.desktop-projects {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* ===== TITULO ===== */
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
 }
 
 /* ===== MOBILE ===== */
 
+.mobile-projects {
+  display: none;
+}
+
+.mobile-carousel {
+  margin-top: 24px;
+}
+
 @media (max-width: 768px) {
 
-  /* 🔥 DEVOLVE O SCROLL PARA O BODY */
   .main-layout {
     flex-direction: column;
     height: auto;
@@ -52,21 +88,33 @@
 
   .left-side {
     height: auto;
-    overflow: visible; /* 🔑 */
+    overflow: visible;
     border-right: none;
   }
 
   .content-container {
     margin: 0;
-    padding: 0 20px 200px;
+    padding: 0 20px 120px;
   }
 
   .right-side {
     display: none;
   }
 
-  .mobile-carousel {
+  /* ✅ CORREÇÃO PRINCIPAL */
+  .mobile-projects {
     display: block;
-    margin-top: 80px;
+    margin-top: 60px; /* antes era 120px */
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-bottom: 16px;
+  }
+
+  .section-title::after {
+    left: 0;
+    transform: none;
   }
 }

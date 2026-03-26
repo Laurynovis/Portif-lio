@@ -1,29 +1,36 @@
 @if (projeto(); as proj) {
-  
-  <div class="conteudo" [ngClass]="animacaoClass()">
 
-    <button class="btn-voltar" (click)="voltar()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M19 12H5M12 19l-7-7 7-7"/>
-      </svg>
-      Início
-    </button>
-    
-    <span class="tech-badge">{{ proj.tech }}</span>
-    <h1 class="titulo">{{ proj.title }}</h1>
-    
-    <div class="divisor"></div>
-    <p class="descricao-longa">{{ proj.fullDesc }}</p>
-    
-    <div class="acoes">
-      @if (proj.githubUrl) {
-        <a [href]="proj.githubUrl" target="_blank" class="btn-primario">
-          Ver Repositório
-        </a>
-      }
+  <div class="detalhe-container">
+
+    <!-- Igual à Home: animação via CSS; TS alterna a classe .play para reiniciar -->
+    <div class="conteudo play" #conteudoRef>
+
+      <button class="btn-voltar" (click)="voltar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Início
+      </button>
+
+      <span class="tech-badge">{{ proj.tech }}</span>
+      <h1 class="titulo">{{ proj.title }}</h1>
+
+      <div class="divisor"></div>
+
+      <p class="descricao-longa">
+        {{ proj.fullDesc }}
+      </p>
+
+      <div class="acoes">
+        @if (proj.githubUrl) {
+          <a [href]="proj.githubUrl" target="_blank" class="btn-primario">
+            Ver Repositório
+          </a>
+        }
+      </div>
+
     </div>
 
   </div>
 
-} @else {
-  }
+}

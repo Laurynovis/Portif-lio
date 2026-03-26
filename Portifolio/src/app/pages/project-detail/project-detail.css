@@ -1,14 +1,62 @@
-/* src/app/pages/projeto-detalhe/projeto-detalhe.css */
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* ===== CONTAINER ===== */
+
 .detalhe-container {
   color: var(--text-main);
   padding: 20px;
-  
   max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
+
+/* ===== ANIMAÇÃO: mesma “lógica da Home” ===== */
+.conteudo.play {
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform, opacity;
+}
+
+/* ===== BOTÃO VOLTAR ===== */
+
+.btn-voltar {
+  margin-top: 40px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-dim);
+  border: none;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-voltar svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+
+.btn-voltar:hover {
+  color: var(--accent);
+}
+
+.btn-voltar:hover svg {
+  transform: translateX(-4px);
+}
+
+/* ===== BADGE ===== */
 
 .tech-badge {
   display: inline-block;
-  background: rgba(74, 144, 226, 0.1); /* Azul translúcido */
+  background: rgba(74, 144, 226, 0.1);
   color: var(--accent);
   padding: 6px 12px;
   border-radius: 20px;
@@ -19,6 +67,8 @@
   margin-bottom: 16px;
   border: 1px solid rgba(74, 144, 226, 0.3);
 }
+
+/* ===== TEXTO ===== */
 
 .titulo {
   font-size: 3rem;
@@ -43,6 +93,8 @@
   margin-bottom: 40px;
 }
 
+/* ===== AÇÕES ===== */
+
 .acoes {
   display: flex;
   gap: 16px;
@@ -63,50 +115,34 @@
   background: #e2e2e2;
 }
 
-/* Animação suave quando troca de projeto */
-.fadeIn {
-  animation: fadeIn 0.5s ease-out;
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2.2rem;
+  }
+
+  .descricao-longa {
+    font-size: 1rem;
+  }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ===== KEYFRAMES (mesmos da Home) ===== */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.estado-vazio {
-  text-align: center;
-  color: var(--text-dim);
-  margin-top: 50px;
-}
-
-/* Adicione no final do seu arquivo CSS */
-.btn-voltar {
-  margin-top: 10vh;
-  margin-bottom: 50px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--text-dim);
-  border: none;
-  padding: 0;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: color 0.2s, transform 0.2s;
-  font-family: 'Inter', sans-serif;
-}
-
-.btn-voltar svg {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.2s;
-}
-
-.btn-voltar:hover {
-  color: var(--accent); /* Fica azul (ou a sua cor de destaque) ao passar o mouse */
-}
-
-.btn-voltar:hover svg {
-  transform: translateX(-4px); /* A setinha dá um pulinho para a esquerda */
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .conteudo.play {
+    animation: none;
+  }
 }

@@ -4,20 +4,29 @@
     <div class="content-container">
       <router-outlet></router-outlet>
 
-      <!-- Carrossel para MOBILE -->
-      <div class="mobile-carousel">
-        <app-radial-carousel
-          [projetos]="listaProjetos()">
-        </app-radial-carousel>
-      </div>
+      <!-- Projetos em destaque (MOBILE) -->
+      <section class="mobile-projects">
+        <h2 class="section-title">Projetos em destaque</h2>
+
+        <div class="mobile-carousel">
+          <app-radial-carousel
+            [projetos]="listaProjetos()">
+          </app-radial-carousel>
+        </div>
+      </section>
+
     </div>
   </section>
 
-  <!-- Carrossel fixo para DESKTOP -->
+  <!-- DESKTOP -->
   <section class="right-side">
-    <app-radial-carousel
-      [projetos]="listaProjetos()">
-    </app-radial-carousel>
+    <div class="desktop-projects">
+      <h2 class="section-title">Projetos em destaque</h2>
+
+      <app-radial-carousel
+        [projetos]="listaProjetos()">
+      </app-radial-carousel>
+    </div>
   </section>
 
 </div>
