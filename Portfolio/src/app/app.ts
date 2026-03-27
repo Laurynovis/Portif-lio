@@ -1,28 +1,31 @@
 import { Component, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Title } from '@angular/platform-browser'; // 1. Importe o Title
 import { RadialCarouselComponent } from './components/radial-carousel/radial-carousel';
-import { startSnowfall } from '../snow'; // Verifique se o caminho ../snow.ts está correto
+import { startSnowfall } from '../snow';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  // Mantemos o RadialCarouselComponent aqui para que o Angular o reconheça no app.html
-  imports: [RouterOutlet, RadialCarouselComponent], 
+  imports: [RouterOutlet, RadialCarouselComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App implements OnInit {
-  // Signal para o título, seguindo sua preferência por Signals
-  protected readonly title = signal('Portifolio');
+  // 2. Corrigi o Signal para o nome certo (Portfolio)
+  protected readonly title = signal('Portfolio | Pedro Enzo');
+
+  // 3. Injetamos o Title no construtor
+  constructor(private titleService: Title) {}
 
   ngOnInit(): void {
-    // Inicializa o efeito de neve cinza claro após a renderização inicial
+    // 4. Forçamos o título na aba do navegador
+    this.titleService.setTitle(this.title());
+
     this.initBackgroundEffect();
   }
 
   private initBackgroundEffect(): void {
-    // O setTimeout garante que o ciclo de detecção do Angular 
-    // termine antes de manipularmos o Canvas diretamente
     setTimeout(() => {
       try {
         startSnowfall();
