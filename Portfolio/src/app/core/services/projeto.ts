@@ -50,7 +50,7 @@ export class ProjetoService {
       periodo: 'Nov 2025 - Presente',
       titulo: 'Trainee / Desenvolvedor',
       empresa: 'Tata Consultancy Services (TCS)',
-      descricao: 'Atuação no desenvolvimento de soluções corporativas utilizando plataformas Low-Code (Mendix e OutSystems), focando em agilidade e escalabilidade.',
+      descricao: 'Atuação no desenvolvimento de soluções corporativas utilizando Angular e Spring Boot, focando em agilidade e escalabilidade.',
       tipo: 'trabalho'
     },
     {
