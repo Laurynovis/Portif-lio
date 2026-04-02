@@ -2,7 +2,7 @@ import { Component, signal, OnInit, inject } from '@angular/core'; // <-- Adicio
 import { RouterOutlet } from '@angular/router';
 import { RadialCarouselComponent } from './components/radial-carousel/radial-carousel';
 import { startSnowfall } from '../snow'; 
-
+import { Footer } from './components/footer/footer';
 
 // Importações do nosso Model e Service (Verifique se as pastas conferem com as que você criou)
 import { ProjetoService } from './core/services/projeto';
@@ -12,7 +12,8 @@ import { Projeto } from './core/models/projeto.model';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, 
-    RadialCarouselComponent], 
+    RadialCarouselComponent,
+     Footer], 
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -7,13 +7,17 @@
   overflow: hidden;
 }
 
+
+
 .left-side {
   flex: 1;
   height: 100vh;
+  display: block;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: none;
   border-right: 1px solid var(--border);
+  padding-top: 80px;
 }
 
 .left-side::-webkit-scrollbar {
@@ -24,7 +28,16 @@
   width: 100%;
   max-width: 800px;
   margin-left: 2vw;
-  padding-bottom: 120px;
+  padding-bottom: 40px; /* Reduzi o padding exagerado de 120px */
+  display: flex;
+  flex-direction: column;
+   /* Garante que o container ocupe a tela toda */
+}
+
+app-footer {
+  margin-top: auto; /* Empurra o footer para o final do container */
+  width: 100%;
+  padding-top: 60px; /* Espaço entre o último conteúdo e o footer */
 }
 
 .right-side {
@@ -78,6 +91,11 @@
   margin-top: 24px;
 }
 
+app-footer {
+  width: 100%;
+  z-index: 9999;
+}
+
 @media (max-width: 768px) {
 
   .main-layout {
@@ -90,6 +108,7 @@
     height: auto;
     overflow: visible;
     border-right: none;
+    padding-top: 90px; /* Um pouco mais de espaço no mobile */
   }
 
   .content-container {

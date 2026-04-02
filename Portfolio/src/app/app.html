@@ -1,32 +1,40 @@
+<app-footer></app-footer>
+
 <div class="main-layout">
+  
+    <section class="left-side">
+      <div class="content-container">
+        <router-outlet></router-outlet>
 
-  <section class="left-side">
-    <div class="content-container">
-      <router-outlet></router-outlet>
+        
 
-      <!-- Projetos em destaque (MOBILE) -->
-      <section class="mobile-projects">
+        <!-- Projetos em destaque (MOBILE) -->
+        <section class="mobile-projects">
+          <h2 class="section-title">Projetos em destaque</h2>
+
+          <div class="mobile-carousel">
+            <app-radial-carousel
+              [projetos]="listaProjetos()">
+            </app-radial-carousel>
+          </div>
+        </section>
+        
+      </div>
+    </section>
+
+    <!-- DESKTOP -->
+    
+    <section class="right-side">
+      <div class="desktop-projects">
         <h2 class="section-title">Projetos em destaque</h2>
 
-        <div class="mobile-carousel">
-          <app-radial-carousel
-            [projetos]="listaProjetos()">
-          </app-radial-carousel>
-        </div>
-      </section>
+        <app-radial-carousel
+          [projetos]="listaProjetos()">
+        </app-radial-carousel>
+      </div>
+      
+    </section>
 
-    </div>
-  </section>
-
-  <!-- DESKTOP -->
-  <section class="right-side">
-    <div class="desktop-projects">
-      <h2 class="section-title">Projetos em destaque</h2>
-
-      <app-radial-carousel
-        [projetos]="listaProjetos()">
-      </app-radial-carousel>
-    </div>
-  </section>
-
+  
 </div>
+
