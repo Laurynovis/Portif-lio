@@ -8,39 +8,47 @@ import { Projeto } from '../models/projeto.model'; // Importamos o "Molde" que c
 })
 export class ProjetoService {
 
-  
+
 
   // Simulando o nosso Banco de Dados (Em OutSystems seria uma Entity)
   // Veja que usamos o tipo "Projeto[]" (Uma lista de objetos que seguem o nosso Molde)
   private projetosDb: Projeto[] = [
-    { 
-      id: 'p1', 
-      title: 'Gestao de Academias', 
-      tech: 'Mendix Low-Code', 
+    {
+      id: 'p1',
+      title: 'Gestao de Academias',
+      tech: 'Mendix Low-Code',
       shortDesc: 'Gestão de treinos e alunos.',
       fullDesc: 'Sistema desenvolvido em Mendix para academias, englobando gestão de matrículas, fichas de treino dinâmicas e painel financeiro.'
     },
-    { 
-      id: 'p2', 
-      title: 'Paciência Spider', 
-      tech: 'Swift / iOS', 
+    {
+      id: 'p2',
+      title: 'Paciência Spider',
+      tech: 'Swift / iOS',
       shortDesc: 'Jogo clássico de cartas.',
       fullDesc: 'Recriação do Paciência Spider nativo para iOS usando Swift e as melhores práticas de gerenciamento de estado da Apple.'
     },
-    { 
-      id: 'p3', 
-      title: 'Gerenciador de estoque', 
-      tech: 'Outsystems', 
+    {
+      id: 'p3',
+      title: 'Gerenciador de estoque',
+      tech: 'Outsystems',
       shortDesc: 'Projeto avaliativo',
       fullDesc: 'Sistema construido com arquittura layer canvas, reutilixzação de contexto com blocos e integração com API REST.'
     }
     ,
-    { 
-      id: 'p4', 
-      title: 'Avaliador de Eventos', 
-      tech: 'React Native', 
+    {
+      id: 'p4',
+      title: 'Avaliador de Eventos',
+      tech: 'React Native',
       shortDesc: 'Projeto de disciplina mobile',
       fullDesc: 'Consttruido com React Native, o aplicativo permite que os usuários avaliem eventos, fornecendo feedback em tempo real e visualizações de dados para organizadores.'
+    },
+
+    {
+      id: 'p5',
+      title: 'Gerador de Receitas Inteligente',
+      tech: 'Angular, Spring Boot, Python, Groq API',
+      shortDesc: 'SPA que gera receitas baseadas nos ingredientes disponíveis usando IA.',
+      fullDesc: 'Aplicação construída em arquitetura de microsserviços para combater o desperdício de alimentos. Utiliza Angular para uma interface fluida, Spring Boot (Java) como orquestrador central e um serviço em Python integrado à API do Groq, garantindo a geração de receitas personalizadas com altíssima velocidade e baixa latência.'
     }
 
   ];
@@ -78,5 +86,5 @@ export class ProjetoService {
   }
   // Método 1: Traz todos os registros (Equivalente a um Aggregate sem filtros no OS)
   // Usaremos isso no Carrossel
-  
+
 }
